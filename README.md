@@ -97,3 +97,4 @@ Visit `http://127.0.0.1:8000/admin/` to log in and manage Chronicle entries.
 
 - The app uses the `core` Django app for page logic and the `Chronicle` model.
 - If you add file uploads or serve media files, you may need to configure `MEDIA_URL` and `MEDIA_ROOT` in `innerreality_config/settings.py`.
+
