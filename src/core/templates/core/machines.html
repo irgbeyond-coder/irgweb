@@ -1,0 +1,29 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Machines | InnerReality{% endblock %}
+
+{% block content %}
+    <h1>Active Machines</h1>
+    <p class="dim">// Logic units currently deployed in the InnerReality ecosystem.</p>
+    
+    <div class="portfolio-grid">
+        <article class="project-card">
+            <h2>AI Content Classifier</h2>
+            <p class="tech-stack">Python | Ollama | LLM Integration</p>
+            <p>A sophisticated script that utilizes local AI models to analyze and categorize raw data. It interprets context to sort files into logical gaming genres and themes.</p>
+        </article>
+
+        <article class="project-card">
+            <h2>Media Archive Engine</h2>
+            <p class="tech-stack">Python | OS Library | File I/O</p>
+            <p>Custom automation for library management. This tool scans directories, extracts metadata from MP3/MP4 files, and re-organizes them into a structured, searchable hierarchy.</p>
+        </article>
+
+        <article class="project-card">
+            <h2>InnerReality Web Nexus</h2>
+            <p class="tech-stack">Django | SQL | HTML/CSS</p>
+            <p>The very site you are standing on. Built with a Model-View-Template architecture to serve as a central hub for chronicles and technical logs.</p>
+        </article>
+    </div>
+{% endblock %}
+

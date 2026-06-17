@@ -1,0 +1,166 @@
+/* ==========================================================================
+   1. CORE VARIABLES & RESET
+   ========================================================================== */
+:root {
+    /* Colors */
+    --neon-cyan: #00ffcc;
+    --bg-dark: #0f0f0f;
+    --card-bg: #1a1a1a;
+    --text-main: #e0e0e0;
+    --text-dim: #888;
+    --border-color: #333;
+    
+    /* Fonts */
+    --font-ui: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --font-code: 'Courier New', Courier, monospace;
+    --font-magazine: 'Playfair Display', serif;
+    --font-body: 'Georgia', serif;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: var(--font-ui);
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+}
+
+/* ==========================================================================
+   2. NAVIGATION & FOOTER
+   ========================================================================== */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #000;
+    padding: 10px 40px;
+    margin: -20px -20px 40px -20px;
+    border-bottom: 1px solid var(--neon-cyan);
+}
+
+nav a {
+    color: var(--neon-cyan);
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 20px;
+    transition: text-shadow 0.2s;
+}
+
+nav a:hover, nav .logo:hover {
+    text-shadow: 0 0 10px var(--neon-cyan);
+}
+
+nav .logo {
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+footer {
+    text-align: center;
+    padding: 40px 0;
+    color: #444;
+    border-top: 1px solid var(--card-bg);
+    margin-top: 50px;
+}
+
+/* ==========================================================================
+   3. THE MAGAZINE SYSTEM (Chronicles)
+   ========================================================================== */
+.magazine-header {
+    text-align: center;
+    border-bottom: 4px double var(--neon-cyan); /* Mixed the newspaper style with neon! */
+    margin-bottom: 30px;
+    padding: 20px 0;
+}
+
+.magazine-header h1 {
+    font-family: var(--font-magazine);
+    font-size: 4.5rem;
+    letter-spacing: -2px;
+    margin: 0;
+    text-transform: uppercase;
+    color: var(--neon-cyan);
+}
+
+.magazine-subheader {
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 3px;
+    font-size: 0.9rem;
+    color: var(--text-dim);
+}
+
+/* The Drop-Cap Magic */
+.article-body p:first-of-type::first-letter {
+    color: var(--neon-cyan);
+    float: left;
+    font-size: 5rem;
+    line-height: 4rem;
+    padding: 4px 8px 0 3px;
+    font-family: var(--font-body);
+    text-shadow: 0 0 5px var(--neon-cyan);
+}
+
+/* ==========================================================================
+   4. UI COMPONENTS (Cards & Grids)
+   ========================================================================== */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.project-card, .contact-section {
+    background: #111;
+    border: 1px solid var(--border-color);
+    padding: 20px;
+    border-radius: 8px;
+    transition: 0.2s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--neon-cyan);
+}
+
+.tech-stack {
+    font-family: var(--font-code);
+    color: var(--neon-cyan);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+}
+
+/* ==========================================================================
+   5. ARCHIVE & SYSTEM SPECS
+   ========================================================================== */
+.system-specs {
+    background: #111;
+    border: 1px solid var(--neon-cyan);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.month-header {
+    color: var(--neon-cyan);
+    border-bottom: 1px solid var(--border-color);
+    text-transform: uppercase;
+}
+
+.archive-link:hover {
+    color: var(--neon-cyan);
+    padding-left: 10px;
+}
+
+/* ==========================================================================
+   6. RESPONSIVE DESIGN
+   ========================================================================== */
+@media (max-width: 600px) {
+    .about-layout { flex-direction: column; }
+    .magazine-header h1 { font-size: 2.5rem; }
+}

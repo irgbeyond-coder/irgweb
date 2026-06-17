@@ -1,0 +1,15 @@
+{% extends 'core/base.html' %}
+
+{% block title %}{{ post.title }} | InnerReality{% endblock %}
+
+{% block content %}
+    <article>
+        <div class="date">{{ post.created_at|date:"F d, Y" }}</div>
+        <h1>{{ post.title }}</h1>
+        <div class="content">
+            {{ post.content|linebreaks }}
+        </div>
+        <br>
+        <a href="/" style="color: #00ffcc; text-decoration: none;">&larr; Back to Home</a>
+    </article>
+{% endblock %}

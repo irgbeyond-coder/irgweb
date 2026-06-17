@@ -1,0 +1,34 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Archives | InnerReality{% endblock %}
+
+{% block content %}
+    <h1>Chronicle Archives</h1>
+    <p class="dim" style="margin-bottom: 30px;">// Accessing historical data logs...</p>
+
+    {% regroup posts by created_at|date:"F Y" as monthly_posts %}
+
+    {% for month in monthly_posts %}
+        <div class="archive-month-block" style="margin-bottom: 40px;">
+            <h2 style="color: #00ffcc; border-bottom: 1px solid #333; padding-bottom: 5px; text-transform: uppercase; font-size: 1.2rem;">
+                {{ month.grouper }}
+            </h2>
+            
+            <ul style="list-style: none; padding: 0; margin-top: 15px;">
+                {% for p in month.list %}
+                    <li style="padding: 10px 0; border-bottom: 1px solid #1a1a1a; display: flex; align-items: center;">
+                        <span style="color: #555; font-family: monospace; width: 80px; font-size: 0.9rem;">
+                            {{ p.created_at|date:"M d" }}
+                        </span>
+                        <a href="{% url 'chronicle_detail' p.pk %}" style="color: #fff; text-decoration: none; font-size: 1.1rem; transition: 0.2s;" onmouseover="this.style.color='#00ffcc'" onmouseout="this.style.color='#fff'">
+                            {{ p.title }}
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% empty %}
+        <p>No transmissions found in the database.</p>
+    {% endfor %}
+{% endblock %}
+
